@@ -19,7 +19,7 @@ import socketserver
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGE = "dymaxion_atlas.html"
+PAGE = "index.html"
 
 
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):

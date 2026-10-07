@@ -1,13 +1,13 @@
 # Dymaxion atlas — animated globe → flat map → interactive case studies
 
-`dymaxion_atlas.html` plays a ~30-second shot and then turns into a map you can
+`index.html` plays a ~30-second shot and then turns into a map you can
 use. It reads two CSVs: one of bilateral trade, one of case studies.
 
 ```bash
 python3 python_scripts/serve.py 8412
 ```
 
-Then open <http://localhost:8412/dymaxion_atlas.html>. It has to be served over
+Then open <http://localhost:8412>. It has to be served over
 http — ES modules will not load from `file://`.
 
 Use that script rather than `python3 -m http.server`: it sends `no-store`, so a
@@ -598,7 +598,7 @@ case-study markers on the map are plain white — the one value nothing else
 uses, so they read as the human layer on top of the trade.
 
 Colour no longer distinguishes one commodity from another — see *Layers and
-colour* below. The per-commodity custom properties in `dymaxion_atlas.html`
+colour* below. The per-commodity custom properties in `index.html`
 (`--ore`, `--carbonate`, `--hydroxide`, `--metal`) still exist because each
 group's `token` is how `src/main.js` builds the `catColor` map, and that map
 doubles as the switched-on-layers gate in `src/flows.js` (`if
@@ -625,7 +625,7 @@ face, and panels are hairline boxes with no shadow.
 | accent | `#f20806` |
 
 It is one palette, defined once as custom properties on `:root` in
-`dymaxion_atlas.html`. The page briefly carried two — this one and a dark
+`index.html`. The page briefly carried two — this one and a dark
 "brine" palette — behind a switch in the panel, which is gone; the dark values
 are in the git history if they are ever wanted.
 
@@ -919,7 +919,7 @@ coast.
 
 **Tiers.** Natural Earth ships three, all public domain, and all three are in
 the repo as `world110m.js`, `world50m.js` and `world10m.js`. Swapping tiers is
-one line in `dymaxion_atlas.html`:
+one line in `index.html`:
 
 ```html
 <script src="world50m.js"></script>
@@ -1289,7 +1289,7 @@ Takes ~25s.
 ## Layout
 
 ```
-dymaxion_atlas.html              page, styles, HUD markup
+index.html              page, styles, HUD markup
 src/config.js                    EVERY tunable — inputs, filters, pacing, sizes
 src/main.js                      scene, timeline, camera, picking, panel + drawer
 src/orbits.js                    the landing page's dotted orbiting routes
