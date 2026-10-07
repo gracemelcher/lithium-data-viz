@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unfolding the Lithium Trade</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* Palette drawn from the evaporation ponds in aesthetic_inspiration/:
+   brine aqua, pool blue, salt white, the rust of the dry flats. The globe
+   itself stays near-black so the lithium colours sit on top of it. */
+:root {
+  color-scheme: light;
+  /* Cream paper, navy ink, hairline rules. The map is line work: its ocean is
+     the page colour and its coast is ink, so the sheet reads as a drawing
+     rather than a lit globe. */
+  --surface:        #f2efe2;   /* the paper everything sits on */
+  --surface-raised: #e9e5d4;
+  --panel:          #fbf2ed;
+  --ocean:          #f2efe2;   /* the page shows through the sea */
+  --land:           #e6dfca;
+  --land-edge:      #183152;   /* ink */
+  --rule:           #b9b6a4;
+  --ink:            #183152;
+  --text-primary:   #183152;
+  --text-secondary: #375d81;
+  --text-muted:     #7b8a93;
+  --node:           #375d81;
+  --brine:          #375d81;
+  --pool:           #264462;
+  --salt:           #183152;
+  --focus:          #fd832e;
+  --accent:         #f20806;
+  --export:         #375d81;   /* a shipment leaving its origin */
+  --import:         #fd832e;   /* the same shipment arriving */
+  /* On the map, colour distinguishes only import from export, so these four
+     were collapsed to one navy. They are drawn again in the case-study export
+     bars, where the commodity is the point — the difference between a country
+     that ships rock and one that ships refined chemical.
+     A single-hue ramp, not four hues: it keeps the blueprint register, it does
+     not compete with the six impact-category colours, and light-to-dark is the
+     right encoding for what is an ordered sequence, raw ore through to metal.
+     Taken from the water-usage column of the supplied palette. */
+  --ore:            #c4d7ed;   /* raw rock */
+  --carbonate:      #8fb0cf;
+  --hydroxide:      #375d81;
+  --other:          #6e90b4;
+  --metal:          #183152;   /* most refined */
+}
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+/* The canvas clears transparent onto the body's own background, and sits
+   above the title rather than below it, so the globe covers the title when the
+   two overlap — which is what happens when a case study swings the globe up
+   and left. Without this the title is HTML over a canvas and always wins. */
+canvas#stage {
+  display: block; position: fixed; inset: 0;
+  width: 100vw; height: 100vh; z-index: 1;
+}
+
+/* Above the canvas, which is itself above the title — the three layers are
+   title (0), canvas (1), interface (2). The canvas has to be given a z-index
+   so it can cover the title, and that alone would lift it over everything in
+   here; because it now clears transparent the interface still *looked* right
+   while the canvas quietly swallowed every click and scroll. */
+.hud { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
+.hud > * { pointer-events: auto; }
+
+/* ---- title card ---- */
+/* One layer carrying the whole masthead — the lithium tile in the corner and
+   the heading down in the lower left. Keeping them in a single element means
+   the opacity that fades the title fades the mark with it, with no second
+   thing for the intro and the case-study handlers to remember. Behind the
+   canvas, so the globe passes in front of both: see canvas#stage. */
+#title {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  transition: opacity 700ms ease;
+}
+#title h1 {
+  position: absolute; left: 40px; bottom: 212px; margin: 0;
+  font-family: Newsreader, Georgia, serif; font-weight: 500;
+  font-size: clamp(36px, 4.4vw, 58px); line-height: 1.04;
+  letter-spacing: -0.02em; text-align: left;
+}
+
+/* ---- the lithium tile ---- */
+#title .mark {
+  position: absolute; left: 40px; top: 38px;
+  width: 116px; height: 116px; box-sizing: border-box;
+  border: 1.5px solid var(--ink); border-radius: 18px;
+  padding: 11px 12px; display: flex; flex-direction: column;
+  color: var(--ink);
+}
+#title .mark .top {
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+#title .mark .z { font-size: 17px; font-weight: 500; }
+#title .mark .w { font-size: 10.5px; }
+#title .mark .sym {
+  font-family: "IBM Plex Sans", sans-serif; font-weight: 500;
+  font-size: 44px; line-height: 0.92; letter-spacing: -0.02em; margin-top: 1px;
+}
+#title .mark .foot {
+  margin-top: auto; font-size: 8px; line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+/* ---- drawing-board details ----
+   Mono headings and hairline boxes, as in the reference drawing. */
+#panel h2, #drawer h2 {
+  font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  letter-spacing: 0.01em;
+}
+#panel, .scard, #drawer, .menu, .pick { box-shadow: none; }
+#panel, .scard, button.ghost { border-color: var(--ink); }
+#drawer .quote { border-left-color: var(--focus); }
+
+/* ---- category highlights ---- */
+
+.catRow button {
+  flex: 1 1 auto; background: none; border: 1px solid var(--rule);
+  color: var(--text-secondary); font: inherit; font-size: 10px;
+  letter-spacing: 0.03em; padding: 5px 5px; cursor: pointer;
+  /* One line each, or "Water Use" breaks at its space while "Environmental"
+     has nowhere to break and the two sit at different heights. */
+  white-space: nowrap;
+}
+/* One per row: the four read as a list rather than as a 2x2 block, which
+   suits a tall narrow key and lets the labels breathe. */
+.catRow { display: grid; grid-template-columns: 1fr; gap: 4px; }
+.catRow button { display: flex; align-items: center; gap: 5px; text-align: left; }
+.catRow button .sw {
+  width: 9px; height: 9px; flex: 0 0 9px; background: var(--cat);
+  border-radius: 50%;
+}
+.catRow button[aria-pressed="true"] { border-color: var(--cat); color: var(--text-primary); }
+.catRow button[aria-pressed="false"] .sw { opacity: 0.3; }
+
+/* ---- transport ---- */
+#transport {
+  /* the intro's own progress and Skip; hidden once the map arrives, where the
+     panel's own "Replay" takes over and the bottom belongs to the
+     timeline and the cards that pop up above it */
+  position: absolute; right: 40px; bottom: 34px;
+  display: flex; align-items: center; gap: 14px;
+  opacity: 0; transition: opacity 500ms ease;      /* hidden on the landing page */
+}
+#progress { width: 190px; height: 2px; background: var(--rule); position: relative; }
+#progress i { position: absolute; inset: 0 auto 0 0; background: var(--text-primary); width: 0%; }
+button.ghost {
+  font: inherit; font-size: 12px; letter-spacing: 0.02em;
+  background: none; border: 1px solid var(--rule); color: var(--text-secondary);
+  padding: 5px 12px; cursor: pointer; transition: all 120ms ease;
+}
+button.ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+button.ghost:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+/* ---- timeline: the year axis along the bottom of the finished map ---- */
+#timeline {
+  position: absolute; left: 40px; right: 40px; bottom: 30px;
+  /* Grid, not flex, so the chart below can share the track's column exactly —
+     its x scale has to be the year axis's or the two would disagree about
+     where a year is. The block is anchored at the bottom and grows upward, so
+     adding the chart row lifts the axis rather than pushing off the page. */
+  display: grid; grid-template-columns: auto 1fr;
+  column-gap: 18px; row-gap: 2px; align-items: center;
+  opacity: 0; pointer-events: none; transition: opacity 600ms ease;
+}
+#timeline.on { opacity: 1; pointer-events: auto; }
+#tlPlay { grid-row: 1; grid-column: 1; min-width: 58px; }
+#tlTrack { grid-row: 1; grid-column: 2; position: relative; height: 44px; cursor: pointer; }
+
+/* ---- total trade per year, under the axis ---- */
+#tlChartWrap {
+  grid-row: 2; grid-column: 2; position: relative;
+  height: var(--tlchart, 54px); pointer-events: none;
+}
+/* The plot stops short of the bottom so the axis title has a strip of its own.
+   Zero stays pinned to the bottom of that plot area, which is what lets the
+   early years read as near-nothing rather than floating above a false floor. */
+#tlChart {
+  position: absolute; left: 0; top: 0;
+  width: 100%; height: calc(100% - 14px); display: block;
+}
+#tlChart .line { fill: none; stroke: var(--brine); stroke-width: 1.4; opacity: 0.85; }
+#tlChart .area { fill: var(--brine); opacity: 0.10; stroke: none; }
+#tlChart .now { fill: var(--focus); }
+#tlChartWrap .cap {
+  position: absolute; left: 0; bottom: 0;
+  font-family: "IBM Plex Mono", monospace; font-size: 10px;
+  letter-spacing: 0.04em; color: var(--text-muted); white-space: nowrap;
+}
+#tlTrack:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+#tlAxis { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#tlAxis .base { stroke: var(--rule); stroke-width: 1; }
+#tlAxis .tick { stroke: #2c4749; stroke-width: 1; }
+#tlAxis .tick.major { stroke: var(--text-muted); }
+#tlAxis .base { stroke: #24393b; }
+/* case studies: taller, brighter dashes, and clickable */
+#tlAxis .dash { stroke: var(--accent); stroke-width: 2; cursor: pointer; }
+#tlAxis .dash:hover, #tlAxis .dash.live { stroke: var(--salt); stroke-width: 3; }
+#tlAxis .hit { stroke: transparent; stroke-width: 14; cursor: pointer; }
+#tlHead {
+  position: absolute; top: 0; bottom: 0; width: 1px;
+  background: var(--brine); transform: translateX(-0.5px);
+  transition: none;
+}
+#tlHead span {
+  position: absolute; bottom: -2px; left: 7px;
+  font-size: 11px; letter-spacing: 0.04em; color: var(--brine); white-space: nowrap;
+}
+#tlTrack .end {
+  position: absolute; bottom: -3px; font-size: 11px;
+  color: var(--text-muted); letter-spacing: 0.04em; pointer-events: none;
+}
+#tlTrack .end.from { left: 0; }
+#tlTrack .end.to { right: 0; }
+/* near the right-hand end the playhead's own label would sit on top of the
+   final year, so it flips to the other side of the head */
+#tlHead.flip span { left: auto; right: 7px; }
+
+/* ---- the compact card the timeline raises ---- */
+/* ---- the case-study tiles that stand above the timeline ---- */
+/* One per dated study, always visible. They cannot each sit exactly over
+   their own dash — the studies cluster in 2017-2024, so the tiles would
+   overlap — so a layout pass lays them out in dash order, pushes overlapping
+   neighbours apart and draws a connector down to the dash each belongs to. */
+#cards {
+  position: absolute; left: 0; right: 0;
+  bottom: calc(84px + var(--tlchart, 54px)); height: 0;
+  opacity: 0; pointer-events: none; transition: opacity 600ms ease;
+}
+#cards.on { opacity: 1; }
+#tlLinks {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0; transition: opacity 600ms ease;
+}
+#tlLinks.on { opacity: 1; }
+#tlLinks line { stroke: var(--rule); stroke-width: 1; }
+#tlLinks line.live { stroke: var(--accent); }
+
+.scard {
+  /* Fixed size, and the photo's frame is always there, so the tiles read as
+     one row rather than a ragged one. */
+  position: absolute; bottom: 0; width: 124px; height: 84px;
+  box-sizing: border-box; overflow: hidden;
+  background: var(--panel); border: 1px solid var(--rule);
+  padding: 0 0 6px; cursor: pointer; pointer-events: auto;
+  text-align: left; font: inherit; color: inherit;
+  transition: border-color 140ms ease, transform 180ms ease;
+}
+.scard:hover, .scard:focus-visible { border-color: var(--brine); outline: none; transform: translateY(-3px); }
+.scard.live { border-color: var(--accent); }
+.scard img {
+  width: 100%; height: 38px; object-fit: cover; display: block;
+  background: var(--surface-raised);
+}
+/* the frame a missing photo leaves behind */
+.scard img.empty { background: var(--surface-raised); }
+.scard .nm {
+  /* one line, so no tile reserves an empty second one */
+  margin: 6px 8px 1px; font-size: 11px; line-height: 1.3; color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.scard .pl {
+  margin: 0 8px; font-size: 9.5px; color: var(--text-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ---- control panel ---- *//* ---- control panel ---- */
+#panel {
+  /* `top` is set by placePanel() in src/main.js, which centres the key on the
+     page and then clamps it clear of the timeline strip — a centred column
+     this tall runs into the case-study cards on a short window. */
+  position: absolute; left: 40px; top: 38px; width: 186px;
+  background: var(--panel); border: 1px solid var(--rule);
+  padding: 14px 14px 16px; opacity: 0; transform: translateY(-6px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+/* TEMPORARY: the layer picker, the metric and the deformation slider are
+   hidden while the piece is shown on fixed settings — all products, scaled by
+   total trade, deformation 75%. The markup and all of its wiring are left
+   alone, so deleting this rule and the three `temp-off` classes brings them
+   back working. The defaults they would show live in src/config.js
+   (DEFAULT_METRIC, DEFAULT_DEFORMATION) and are pushed into the controls at
+   startup, so the two cannot drift apart while this is hidden. */
+.field.temp-off { display: none; }
+#panel[hidden] { display: block; visibility: hidden; }
+#panel.on { opacity: 1; transform: none; }
+#panel h2 {
+  font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 20px;
+  margin: 0 0 2px; letter-spacing: -0.01em;
+}
+#panel .sub { color: var(--text-muted); font-size: 12px; margin: 0 0 14px; }
+.field { margin-top: 14px; }
+.field > label, .field > .lab {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.field .val { color: var(--text-primary); text-transform: none; letter-spacing: 0; }
+input[type=range] { width: 100%; accent-color: var(--focus); }
+select {
+  width: 100%; font: inherit; font-size: 13px; padding: 5px 6px;
+  background: var(--surface); color: var(--text-primary);
+  border: 1px solid var(--rule);
+}
+/* ---- layer picker ---- */
+.picker { position: relative; }
+.pick {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: var(--surface-raised); border: 1px solid var(--rule); color: inherit;
+  font: inherit; font-size: 12px; padding: 7px 9px; cursor: pointer; text-align: left;
+}
+.pick:hover { border-color: var(--text-muted); }
+.pick:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.pick .caret { color: var(--text-muted); font-size: 10px; }
+.menu {
+  position: absolute; left: 0; right: 0; top: calc(100% + 3px); z-index: 6;
+  background: var(--panel); border: 1px solid var(--rule);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+.menu button {
+  display: flex; align-items: baseline; gap: 7px; width: 100%;
+  background: none; border: 0; border-bottom: 1px solid var(--rule);
+  font: inherit; font-size: 11.5px; color: inherit;
+  padding: 7px 9px; cursor: pointer; text-align: left;
+}
+.menu button:last-child { border-bottom: 0; }
+.menu button:hover { background: var(--surface-raised); }
+.menu button .tick { width: 9px; color: var(--brine); flex: 0 0 9px; }
+.menu button[aria-pressed="false"] { color: var(--text-muted); }
+.menu button[aria-pressed="false"] .tick { color: transparent; }
+.menu button .n {
+  font-family: "IBM Plex Mono", monospace; color: var(--text-muted);
+  font-size: 10px; margin-left: auto; white-space: nowrap;
+}
+.menu .all { border-bottom: 1px solid var(--rule); color: var(--text-secondary); }
+
+/* ---- the only colour-coded thing on the map: which way the goods went ---- */
+.key { list-style: none; margin: 0; padding: 0; }
+.key li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; padding: 3px 0;
+}
+.key .sw {
+  width: 20px; height: 0; flex: 0 0 20px;
+  border-top: 3px dotted currentColor;
+}
+.key .sw.out { color: var(--export); }
+.key .sw.in { color: var(--import); }
+.field .val.note { font-size: 10px; color: var(--text-muted); text-transform: none; letter-spacing: 0; }
+.row { display: flex; gap: 8px; align-items: center; margin-top: 14px; }
+
+/* ---- tooltip ---- */
+#tip {
+  position: absolute; pointer-events: none; z-index: 5;
+  background: var(--panel); border: 1px solid var(--rule);
+  padding: 7px 9px; font-size: 12px; max-width: 230px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+#tip b { font-weight: 500; }
+#tip .m { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--text-secondary); }
+#tip[hidden] { display: none; }
+
+/* ---- case study drawer ---- */
+#drawer {
+  position: absolute; right: 0; top: 0; bottom: 0; width: clamp(360px, 50vw, 900px);
+  background: var(--panel); border-left: 1px solid var(--rule);
+  padding: 30px 30px 40px; overflow-y: auto;
+  transform: translateX(100%); transition: transform 420ms cubic-bezier(.22,.61,.36,1);
+}
+#drawer.on { transform: none; }
+#drawer .close { position: absolute; right: 22px; top: 22px; }
+#drawer .badge {
+  display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+  border: 1px solid var(--rule); padding: 2px 6px; margin-bottom: 12px;
+}
+#drawer .hero {
+  display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover;
+  margin: 0 0 20px; border: 1px solid var(--rule);
+}
+#drawer h2 {
+  font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 30px;
+  line-height: 1.1; margin: 0 0 4px; letter-spacing: -0.015em;
+}
+#drawer .place { color: var(--text-muted); font-size: 13px; margin: 0 0 16px; }
+#drawer .kicker { font-size: 15.5px; color: var(--text-primary); margin: 0 0 18px; }
+#drawer .facts { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 20px; }
+#drawer .fact { background: var(--panel); padding: 8px 10px; display: flex; justify-content: space-between; gap: 10px; }
+#drawer .fact .k { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+#drawer .fact .v { font-size: 13px; text-align: right; }
+#drawer .body p { color: var(--text-secondary); margin: 0 0 12px; }
+#drawer h3 {
+  font-family: "IBM Plex Mono", monospace; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); font-weight: 500;
+  margin: 24px 0 8px; padding-top: 14px; border-top: 1px solid var(--rule);
+}
+#drawer .bar {
+  display: grid; grid-template-columns: 1fr 58px 64px; gap: 8px;
+  align-items: center; margin-bottom: 5px; font-size: 12.5px;
+}
+#drawer .bar .t { position: relative; padding: 2px 6px; overflow: hidden; }
+/* One segment per commodity group, laid end to end. Opacity rather than solid
+   fill so the partner's name stays readable over the top of it. */
+#drawer .bar .t i { position: absolute; top: 0; bottom: 0; opacity: 0.55; }
+#drawer .bar .t > span { position: relative; }
+#drawer .bar .s { line-height: 0; }
+#drawer .spark { overflow: visible; }
+#drawer .spark polyline { fill: none; stroke: var(--text-muted); stroke-width: 1; opacity: 0.75; }
+#drawer .spark circle { fill: var(--focus); }
+/* Which commodity each band is. Only shown when a country ships more than
+   one, so it never explains a distinction that is not on screen. */
+#drawer .gkey {
+  display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0 0 9px;
+  font-size: 11px; color: var(--text-muted);
+}
+#drawer .gkey span { display: inline-flex; align-items: center; gap: 5px; }
+#drawer .gkey i { width: 9px; height: 9px; border-radius: 2px; opacity: 0.85; }
+#drawer .sparknote {
+  margin: 9px 0 0; font-size: 11px; line-height: 1.45; color: var(--text-muted);
+}
+#drawer .bar .t span { position: relative; }
+#drawer .bar .v { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--text-secondary); text-align: right; }
+
+#drawer .quote {
+  margin: 0 0 22px; padding: 0 0 0 18px;
+  border-left: 2px solid var(--brine);
+  font-family: Newsreader, Georgia, serif; font-size: 22px; line-height: 1.34;
+  letter-spacing: -0.012em; color: var(--salt); text-wrap: pretty;
+}
+/* Separates the testimonial from the description. Short and left-aligned
+   rather than a full-width rule: the h3 section headings already use one of
+   those, and reusing it here would read as the start of a new section instead
+   of as a beat between two parts of the same one. */
+#drawer .quoteRule {
+  width: 48px; height: 1px; border: 0; margin: 0 0 20px;
+  background: var(--rule);
+}
+#drawer .quote footer {
+  margin-top: 13px; font-family: "IBM Plex Sans", sans-serif; font-size: 12px;
+  line-height: 1.5; color: var(--text-muted); letter-spacing: 0;
+}
+#drawer .quote footer .who { color: var(--text-secondary); }
+#drawer .quote footer .role { font-size: 11.5px; }
+#drawer .sources { margin: 0; padding-left: 18px; }
+#drawer .sources li { font-size: 12.5px; margin-bottom: 3px; word-break: break-word; }
+
+/* ---- primary source documents ---- */
+#drawer .docs { list-style: none; margin: 0; padding: 0; }
+#drawer .docs li { margin-bottom: 6px; }
+#drawer .docs button {
+  display: flex; align-items: baseline; gap: 8px; width: 100%; text-align: left;
+  background: none; border: 1px solid var(--rule); color: var(--text-primary);
+  font: inherit; font-size: 12.5px; padding: 7px 9px; cursor: pointer;
+  transition: border-color 160ms ease;
+}
+#drawer .docs button:hover { border-color: var(--ink); }
+#drawer .docs .ext {
+  font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text-muted); flex: 0 0 auto;
+}
+
+#docView {
+  position: fixed; inset: 0; z-index: 20; display: flex;
+  align-items: center; justify-content: center; padding: 32px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  opacity: 0; transition: opacity 240ms ease;
+}
+#docView.on { opacity: 1; }
+#docView[hidden] { display: none; }
+#docSheet {
+  display: flex; flex-direction: column; width: min(1040px, 100%); height: 100%;
+  background: var(--panel); border: 1px solid var(--ink);
+}
+#docSheet header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; padding: 14px 16px; border-bottom: 1px solid var(--rule);
+}
+#docSheet h2 {
+  font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 19px;
+  margin: 0; letter-spacing: -0.01em;
+}
+#docSheet #docMeta {
+  margin: 2px 0 0; font-family: "IBM Plex Mono", monospace; font-size: 10px;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+}
+#docSheet .row { flex: 0 0 auto; margin: 0; }
+#docFrame { flex: 1 1 auto; min-height: 0; background: var(--surface-raised); }
+#docFrame iframe, #docFrame img, #docFrame pre {
+  display: block; width: 100%; height: 100%; border: 0; margin: 0;
+}
+#docFrame img { object-fit: contain; background: var(--surface-raised); }
+#docFrame pre {
+  overflow: auto; padding: 18px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; line-height: 1.6; white-space: pre-wrap; color: var(--text-primary);
+}
+#docFrame .fallback {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; height: 100%; text-align: center; padding: 24px;
+  font-size: 13px; color: var(--text-secondary);
+}
+#drawer a { color: var(--focus); }
+#drawer .muted { color: var(--text-muted); }
+
+/* ---- landing page ---- */
+#landing { position: absolute; inset: 0; pointer-events: none; transition: opacity 600ms ease; }
+#landing.gone, #landing.gone > * { opacity: 0; pointer-events: none !important; }
+/* the children re-enable pointer events, so they have to be turned off too,
+   or the invisible Enter bar keeps swallowing clicks along the bottom */
+#landing > * { pointer-events: auto; }
+
+#rolodex {
+  position: absolute; right: 3.5vw; top: 50%; transform: translateY(-50%);
+  width: 360px; height: min(74vh, 640px);
+  perspective: var(--persp, 1500px); perspective-origin: 50% 50%;
+  cursor: grab; touch-action: none;
+}
+#rolodex.dragging { cursor: grabbing; }
+.rcard {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--cw); height: var(--ch);
+  margin-left: calc(var(--cw) / -2); margin-top: calc(var(--ch) / -2);
+  background: none; border: 0; padding: 0; color: inherit; cursor: pointer;
+  transform-style: preserve-3d; will-change: transform, opacity;
+}
+.rcard .plate {
+  position: absolute; inset: 0; overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  transition: border-color 200ms ease;
+}
+.rcard .shot {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.46;
+}
+/* Paper laid over the photograph, not a scrim under light text: the card's
+   type is ink, so the veil has to lighten rather than darken, and it has to
+   stay strong the whole way across because the location line runs to the
+   right edge. */
+.rcard .veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(94deg,
+    rgba(251,242,237,0.95) 0%, rgba(251,242,237,0.82) 52%, rgba(251,242,237,0.58) 100%);
+}
+.rcard .meta { position: absolute; left: 15px; right: 15px; bottom: 13px; text-align: left; }
+.rcard .meta b {
+  display: block; font-family: Newsreader, Georgia, serif; font-weight: 400;
+  font-size: 16px; line-height: 1.15; color: var(--salt); letter-spacing: -0.01em;
+}
+.rcard .meta em {
+  display: block; font-style: normal; font-size: 10.5px; margin-top: 3px;
+  color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rcard.focused .plate {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 1px var(--focus);
+}
+.rcard.focused .shot { opacity: 0.62; }
+.rcard:hover .plate { border-color: var(--ink); }
+#rolodexHint {
+  position: absolute; left: 0; right: 0; bottom: -28px; text-align: center;
+  font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--text-muted); pointer-events: none;
+}
+
+#enterBar {
+  position: absolute; left: 40px; bottom: 60px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  transition: opacity 400ms ease;
+}
+/* Out of the way while a case study is open: the study is the thing to read,
+   and Enter would take you off the page in the middle of it. `pointer-events`
+   has to go with the opacity or the button stays clickable while invisible.
+   Declared after `#landing > *`, which turns pointer events back on for every
+   child of the landing and matches with the same specificity. */
+#enterBar.away { opacity: 0; pointer-events: none; }
+#enter {
+  font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  /* light type on the ink fill: the page is paper now, so the button is the
+     dark thing on it rather than the bright thing in the dark */
+  color: var(--panel); background: var(--ink); border: 0;
+  padding: 13px 46px; cursor: pointer;
+  transition: background 160ms ease, letter-spacing 200ms ease;
+}
+#enter:hover { background: var(--focus); letter-spacing: 0.3em; }
+#enter:focus-visible { outline: 2px solid var(--salt); outline-offset: 3px; }
+
+/* an svg is a replaced element: inset alone leaves it at its intrinsic
+   300x150, which clips the line out of sight. It needs a size. */
+#leader { position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0; transition: opacity 260ms ease; }
+#leader.on { opacity: 1; }
+#leader line { stroke: var(--brine); stroke-width: 1; stroke-dasharray: 3 4; }
+#leader circle { fill: none; stroke: var(--brine); stroke-width: 1.5; }
+#leader .pin { fill: var(--brine); stroke: none; }
+
+#loading {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: var(--surface); font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--text-muted); transition: opacity 500ms ease;
+}
+#err { max-width: 60ch; color: var(--accent); font-size: 13px; line-height: 1.6; }
+</style>
+
+<canvas id="stage"></canvas>
+
+<div id="title">
+  <div class="mark" aria-hidden="true">
+    <div class="top"><span class="z">3</span><span class="w">6.941</span></div>
+    <div class="sym">Li</div>
+    <div class="foot">[He]2s<sup>1</sup><br>Lithium</div>
+  </div>
+  <h1>Unfolding<br>the Lithium<br>Trade</h1>
+</div>
+
+<div class="hud">
+
+  <div id="panel" class="ctl">
+    <h2>The Dymaxion Map</h2>
+    <p class="sub">Click a white dot for a case study.</p>
+
+    <div class="field temp-off">
+      <div class="lab">Layers <span class="val" id="drawNote"></span></div>
+      <div class="picker">
+        <button class="pick" id="layerBtn" aria-expanded="false" aria-haspopup="true">
+          <span id="layerSummary">All products</span><span class="caret">▾</span>
+        </button>
+        <div class="menu" id="layerMenu" role="group" aria-label="Product layers" hidden></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="lab">Impact categories <span class="val" id="catNote"></span></div>
+      <div class="catRow" id="catRow"></div>
+    </div>
+
+    <div class="field">
+      <div class="lab">Direction</div>
+      <ul class="key" id="dirKey">
+        <li><i class="sw out"></i>Exports</li>
+        <li><i class="sw in"></i>Imports</li>
+      </ul>
+    </div>
+
+    <div class="field temp-off">
+      <label for="metric">Scale the map by</label>
+      <select id="metric">
+        <option value="none">Nothing — true Dymaxion</option>
+        <option value="out">Exports</option>
+        <option value="in">Imports</option>
+        <option value="total" selected>Total trade</option>
+        <option value="net">Net exports (importers shrink)</option>
+      </select>
+    </div>
+
+    <div class="field temp-off">
+      <label for="strength">Deformation <span class="val" id="strengthVal">75%</span></label>
+      <input type="range" id="strength" min="0" max="100" value="75" step="1">
+    </div>
+
+    <div class="row">
+      <button class="ghost" id="replay">Replay</button>
+    </div>
+  </div>
+
+  <div id="transport">
+    <div id="progress"><i></i></div>
+    <button class="ghost" id="skip">Skip</button>
+  </div>
+
+  <div id="timeline" aria-hidden="true">
+    <button class="ghost" id="tlPlay" aria-label="Play the timeline">Play</button>
+    <div id="tlTrack" role="slider" tabindex="0" aria-label="Year">
+      <svg id="tlAxis" aria-hidden="true"></svg>
+      <div id="tlHead"><span id="tlYear">—</span></div>
+      <span class="end from" id="tlFrom"></span>
+      <span class="end to" id="tlTo"></span>
+    </div>
+    <div id="tlChartWrap">
+      <svg id="tlChart" aria-hidden="true" preserveAspectRatio="none">
+        <path class="area"></path>
+        <polyline class="line"></polyline>
+        <circle class="now" r="3"></circle>
+      </svg>
+      <span class="cap" id="tlChartCap"></span>
+    </div>
+  </div>
+
+  <svg id="tlLinks" aria-hidden="true"></svg>
+  <div id="cards" aria-label="Case studies on the timeline"></div>
+
+  <div id="landing">
+    <div id="rolodex" aria-label="Case studies" tabindex="0"></div>
+    <div id="enterBar">
+      <button id="enter">Enter</button>
+    </div>
+  </div>
+
+  <svg id="leader" aria-hidden="true">
+    <line id="leaderLine" x1="0" y1="0" x2="0" y2="0"></line>
+    <circle id="leaderRing" cx="0" cy="0" r="7"></circle>
+    <circle id="leaderPin" class="pin" cx="0" cy="0" r="2.5"></circle>
+  </svg>
+
+  <div id="tip" hidden></div>
+
+  <aside id="drawer" aria-hidden="true">
+    <button class="ghost close" id="closeDrawer">Close</button>
+    <div id="drawerBody"></div>
+  </aside>
+
+  <!-- Primary sources held in documents/, previewed here rather than opened
+       on someone else's site. Filled by openDocument() in src/main.js. -->
+  <div id="docView" aria-hidden="true" role="dialog" aria-modal="true"
+       aria-labelledby="docTitle" hidden>
+    <div id="docSheet">
+      <header>
+        <div>
+          <h2 id="docTitle"></h2>
+          <p id="docMeta"></p>
+        </div>
+        <div class="row">
+          <a class="ghost" id="docOpen" target="_blank" rel="noopener">Open in new tab</a>
+          <button class="ghost" id="docClose">Close</button>
+        </div>
+      </header>
+      <div id="docFrame"></div>
+    </div>
+  </div>
+
+  <div id="loading">starting…</div>
+</div>
+
+<!-- Natural Earth coastlines. 110m is the coarsest tier and 10m the finest;
+     every country name is the same across tiers, so swapping this line is
+     all it takes. See "Coastline detail" in the README. -->
+<script src="world50m.js"></script>
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }
+</script>
+<script type="module">
+import { start } from './src/main.js';
+start().catch((err) => {
+  console.error(err);
+  document.getElementById('loading').innerHTML =
+    '<div id="err"><b>' + err.message + '</b><br>' +
+    'This page needs to be served over http — open a terminal in the project folder and run ' +
+    '<code>python3 -m http.server 8000</code>, then visit ' +
+    '<code>localhost:8000/dymaxion_atlas.html</code>.</div>';
+});
+</script>
+</html>

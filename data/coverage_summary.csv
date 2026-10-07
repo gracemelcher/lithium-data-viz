@@ -1,0 +1,521 @@
+group,scope,cmd_code,cmd_desc,year,n_records,n_reporters,total_trade_value_usd
+batteries,bilateral,850650,Primary cells and batteries; lithium,1996,1664,52,1878324007.0
+batteries,bilateral,850650,Primary cells and batteries; lithium,1997,2154,78,2291589460.0
+batteries,bilateral,850650,Primary cells and batteries; lithium,1998,2493,90,2420191667.0
+batteries,bilateral,850650,Primary cells and batteries; lithium,1999,2756,112,2697930152.0
+batteries,bilateral,850650,Primary cells and batteries; lithium,2000,4049,131,3979611010.99
+batteries,bilateral,850650,Primary cells and batteries; lithium,2001,4469,133,3926026271.19
+batteries,bilateral,850650,Primary cells and batteries; lithium,2002,4848,140,4254829716.91
+batteries,bilateral,850650,Primary cells and batteries; lithium,2003,5230,148,5444491440.46
+batteries,bilateral,850650,Primary cells and batteries; lithium,2004,5881,150,6037614378.92
+batteries,bilateral,850650,Primary cells and batteries; lithium,2005,6053,154,6603655547.1
+batteries,bilateral,850650,Primary cells and batteries; lithium,2006,6386,160,6566357512.57
+batteries,bilateral,850650,Primary cells and batteries; lithium,2007,6845,159,6379701349.71
+batteries,bilateral,850650,Primary cells and batteries; lithium,2008,7562,162,7613558507.74
+batteries,bilateral,850650,Primary cells and batteries; lithium,2009,7874,166,7337622211.07
+batteries,bilateral,850650,Primary cells and batteries; lithium,2010,7766,165,8799583758.53
+batteries,bilateral,850650,Primary cells and batteries; lithium,2011,8068,166,9256907948.71
+batteries,bilateral,850650,Primary cells and batteries; lithium,2012,8864,169,9912090966.44
+batteries,bilateral,850650,Primary cells and batteries; lithium,2013,9593,170,10303169142.87
+batteries,bilateral,850650,Primary cells and batteries; lithium,2014,10316,170,11363485987.11
+batteries,bilateral,850650,Primary cells and batteries; lithium,2015,12072,171,12675936576.9
+batteries,bilateral,850650,Primary cells and batteries; lithium,2016,12542,175,12922766415.75
+batteries,bilateral,850650,Primary cells and batteries; lithium,2017,15320,179,15283568493.92
+batteries,bilateral,850650,Primary cells and batteries; lithium,2018,14347,177,14053208115.3
+batteries,bilateral,850650,Primary cells and batteries; lithium,2019,14915,171,13835214740.08
+batteries,bilateral,850650,Primary cells and batteries; lithium,2020,14918,169,13847107694.54
+batteries,bilateral,850650,Primary cells and batteries; lithium,2021,15850,170,16120239673.05
+batteries,bilateral,850650,Primary cells and batteries; lithium,2022,16632,165,17393876068.12
+batteries,bilateral,850650,Primary cells and batteries; lithium,2023,17807,163,19245578875.45
+batteries,bilateral,850650,Primary cells and batteries; lithium,2024,17292,139,17738807418.45
+batteries,bilateral,850650,Primary cells and batteries; lithium,2025,16647,99,16744450312.92
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2012,7080,99,49354953099.57
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2013,8685,117,56419447487.36
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2014,10499,135,62715796933.87
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2015,13321,148,88976875353.68
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2016,14588,154,97393327830.78
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2017,18455,160,121332414485.51
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2018,17553,162,127048498892.63
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2019,18563,160,144941169382.67
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2020,19135,160,206879890688.2
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2021,20335,162,222781214154.63
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2022,22354,156,467351258201.21
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2023,24011,159,619602199636.27
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2024,24337,137,561496247249.16
+batteries,bilateral,850760,Electric accumulators; lithium-ion,2025,24410,97,467399668504.48
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1990,929,29,209075332.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1991,1201,35,519448752.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1992,1661,48,846685916.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1993,1985,58,1278843354.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1994,2905,86,2901271044.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1995,3458,103,5506955491.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1996,3791,111,7483825515.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1997,4257,116,10761077719.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1998,4770,130,13105131466.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),1999,5179,140,17380940899.0
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2000,6778,154,22609669478.37
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2001,7149,157,17797699464.06
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2002,7497,156,18894393857.68
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2003,7983,160,24924458159.12
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2004,8979,161,31972455682.81
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2005,9312,165,38340760676.36
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2006,9804,164,42676764880.22
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2007,10524,169,50237361771.2
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2008,11184,167,62597703409.91
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2009,11614,169,53860864383.4
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2010,11620,172,63174970872.68
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2011,11977,170,70052198553.33
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2012,10738,170,12693803119.19
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2013,10956,171,11299333858.53
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2014,11226,171,9680731697.55
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2015,12562,173,9951023701.29
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2016,12447,176,8885088656.32
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2017,14768,179,7010464424.6
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2018,13861,176,6486371408.62
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2019,14248,170,5837919567.1
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2020,13457,169,5590054367.21
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2021,13301,170,5910157962.15
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2022,13816,166,6229362147.29
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2023,14180,165,7228350274.29
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2024,13342,140,6808462408.15
+batteries,bilateral,850780,Electric accumulators; other (contains lithium-ion before 2012),2025,12216,99,7264254909.35
+batteries,world,850650,Primary cells and batteries; lithium,1996,97,52,939162004.0
+batteries,world,850650,Primary cells and batteries; lithium,1997,135,78,1145794732.0
+batteries,world,850650,Primary cells and batteries; lithium,1998,162,90,1210095834.0
+batteries,world,850650,Primary cells and batteries; lithium,1999,186,112,1348965075.0
+batteries,world,850650,Primary cells and batteries; lithium,2000,227,131,1967983212.8
+batteries,world,850650,Primary cells and batteries; lithium,2001,230,133,1944101438.43
+batteries,world,850650,Primary cells and batteries; lithium,2002,257,140,2105082926.71
+batteries,world,850650,Primary cells and batteries; lithium,2003,266,148,2777674698.16
+batteries,world,850650,Primary cells and batteries; lithium,2004,272,150,2976085882.55
+batteries,world,850650,Primary cells and batteries; lithium,2005,286,154,3270027256.65
+batteries,world,850650,Primary cells and batteries; lithium,2006,303,160,3244387687.32
+batteries,world,850650,Primary cells and batteries; lithium,2007,297,159,3151756145.64
+batteries,world,850650,Primary cells and batteries; lithium,2008,294,162,3583544892.66
+batteries,world,850650,Primary cells and batteries; lithium,2009,313,166,3441596290.3
+batteries,world,850650,Primary cells and batteries; lithium,2010,329,165,4181111247.63
+batteries,world,850650,Primary cells and batteries; lithium,2011,316,166,4371389651.83
+batteries,world,850650,Primary cells and batteries; lithium,2012,333,169,4672210914.2
+batteries,world,850650,Primary cells and batteries; lithium,2013,347,170,4760319815.71
+batteries,world,850650,Primary cells and batteries; lithium,2014,345,170,5307959236.26
+batteries,world,850650,Primary cells and batteries; lithium,2015,342,171,5239675796.23
+batteries,world,850650,Primary cells and batteries; lithium,2016,341,175,5322808681.26
+batteries,world,850650,Primary cells and batteries; lithium,2017,353,179,6007733612.13
+batteries,world,850650,Primary cells and batteries; lithium,2018,340,177,6156133323.3
+batteries,world,850650,Primary cells and batteries; lithium,2019,338,171,5951696966.25
+batteries,world,850650,Primary cells and batteries; lithium,2020,331,169,5889603573.71
+batteries,world,850650,Primary cells and batteries; lithium,2021,348,170,6796017022.13
+batteries,world,850650,Primary cells and batteries; lithium,2022,346,165,7310302283.43
+batteries,world,850650,Primary cells and batteries; lithium,2023,349,163,7962368454.63
+batteries,world,850650,Primary cells and batteries; lithium,2024,321,139,7213268352.28
+batteries,world,850650,Primary cells and batteries; lithium,2025,234,99,6537602829.76
+batteries,world,850760,Electric accumulators; lithium-ion,2012,198,99,23712467542.08
+batteries,world,850760,Electric accumulators; lithium-ion,2013,234,117,26832524300.18
+batteries,world,850760,Electric accumulators; lithium-ion,2014,278,135,29401036971.78
+batteries,world,850760,Electric accumulators; lithium-ion,2015,303,148,31441805882.27
+batteries,world,850760,Electric accumulators; lithium-ion,2016,310,154,35172589738.02
+batteries,world,850760,Electric accumulators; lithium-ion,2017,329,160,42701758514.46
+batteries,world,850760,Electric accumulators; lithium-ion,2018,330,162,56676572263.48
+batteries,world,850760,Electric accumulators; lithium-ion,2019,331,160,66968275770.28
+batteries,world,850760,Electric accumulators; lithium-ion,2020,332,160,85866888575.75
+batteries,world,850760,Electric accumulators; lithium-ion,2021,343,162,131991022086.97
+batteries,world,850760,Electric accumulators; lithium-ion,2022,339,156,192324189613.77
+batteries,world,850760,Electric accumulators; lithium-ion,2023,348,159,245350067254.64
+batteries,world,850760,Electric accumulators; lithium-ion,2024,320,137,222738771866.12
+batteries,world,850760,Electric accumulators; lithium-ion,2025,244,97,164335764954.07
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1990,58,29,104537666.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1991,73,35,259724376.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1992,95,48,423342959.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1993,111,58,639421677.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1994,163,86,1450635521.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1995,198,103,2753477753.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1996,209,111,3741912760.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1997,213,116,5380538852.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1998,250,130,6552565728.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),1999,268,140,8690470444.0
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2000,300,154,11262458724.1
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2001,310,157,8862792464.58
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2002,319,156,9393058237.35
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2003,325,160,12482392085.86
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2004,333,161,15891825567.19
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2005,335,165,19050513434.29
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2006,339,164,21215393935.52
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2007,352,169,24952477982.55
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2008,345,167,30121169924.98
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2009,359,169,25983832967.41
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2010,374,172,30475248597.97
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2011,359,170,33530217104.47
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2012,367,170,6104324369.02
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2013,371,171,5418686652.02
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2014,369,171,4579875743.24
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2015,374,173,4633759352.52
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2016,374,176,4121641161.13
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2017,388,179,2959023969.79
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2018,376,176,2691939566.84
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2019,362,170,2258995074.83
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2020,354,169,2013176387.4
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2021,362,170,2127420164.78
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2022,371,166,2360483895.3
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2023,351,165,2722101209.88
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2024,315,140,2632817412.48
+batteries,world,850780,Electric accumulators; other (contains lithium-ion before 2012),2025,231,99,2952848823.62
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1990,720,27,895763375.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1991,918,37,1100423571.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1992,1361,53,1381275915.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1993,1561,61,1277763040.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1994,2053,87,1635038862.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1995,2267,104,2173347280.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1996,2483,115,2221239389.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1997,2706,124,2402916413.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1998,2848,129,2326466480.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1999,2882,135,2381562602.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2000,3696,149,2507296092.45
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2001,3799,149,2504967062.21
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2002,4020,150,2584846418.49
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2003,4195,150,2417612836.87
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2004,4521,150,3582739328.43
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2005,4516,158,3781096833.06
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2006,4588,158,3891055187.03
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2007,4833,160,4197061960.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2008,5216,159,5709938240.7
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2009,5008,161,4366329560.32
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2010,5032,164,4799614549.75
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2011,5203,163,5993930975.95
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2012,5293,161,6048286015.16
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2013,5802,166,5942616965.32
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2014,6055,164,5751575640.7
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2015,7048,167,6362028963.58
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2016,7301,170,6634955766.14
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2017,8576,174,11878506591.27
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2018,7975,176,11236025822.33
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2019,7970,169,9568584687.45
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2020,7942,165,8113963744.59
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2021,8710,163,12311202306.0
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2022,9080,161,43416982449.55
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2023,9123,161,66417009156.29
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2024,9001,137,24207337555.22
+upstream,bilateral,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2025,8401,97,12999374686.21
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1990,162,27,70408160.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1991,214,30,91088052.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1992,296,40,98105328.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1993,373,51,90069412.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1994,445,71,104170756.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1995,494,75,141232868.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1996,548,82,167729112.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1997,527,87,184780222.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1998,589,97,160477038.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),1999,599,97,173553740.0
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2000,697,109,209053581.25
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2001,765,112,185802283.16
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2002,839,109,228985962.83
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2003,865,112,275302454.49
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2004,928,127,297806349.52
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2005,1067,132,347873992.5
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2006,1016,129,343159686.42
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2007,1110,131,401588098.37
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2008,1215,130,609313143.21
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2009,1201,133,432337442.12
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2010,1198,139,574580195.21
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2011,1250,137,758338239.65
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2012,1305,132,1399251473.46
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2013,1287,137,557186155.05
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2014,1360,137,605184760.84
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2015,1557,133,819656282.55
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2016,1442,129,842740452.72
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2017,1660,137,1005007452.34
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2018,1505,127,1142190125.12
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2019,1561,131,1111575631.88
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2020,1532,114,1421992927.13
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2021,1684,117,1322739390.91
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2022,1714,113,2218641011.03
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2023,1832,119,3227694404.96
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2024,1719,106,2691017913.85
+upstream,bilateral,280519,Alkali metals other than sodium (lithium metal),2025,1650,78,1932480378.98
+upstream,bilateral,282520,Lithium oxide and hydroxide,1990,174,25,39219360.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1991,210,29,64257892.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1992,324,39,88984585.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1993,380,45,95745066.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1994,467,61,117475748.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1995,563,70,147646720.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1996,608,74,150669364.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1997,641,79,170785338.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1998,654,85,159108004.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,1999,664,86,154307178.0
+upstream,bilateral,282520,Lithium oxide and hydroxide,2000,799,89,180948161.14
+upstream,bilateral,282520,Lithium oxide and hydroxide,2001,758,92,164000047.35
+upstream,bilateral,282520,Lithium oxide and hydroxide,2002,781,95,154100049.1
+upstream,bilateral,282520,Lithium oxide and hydroxide,2003,778,101,159256087.52
+upstream,bilateral,282520,Lithium oxide and hydroxide,2004,816,97,172598524.82
+upstream,bilateral,282520,Lithium oxide and hydroxide,2005,785,94,208403913.4
+upstream,bilateral,282520,Lithium oxide and hydroxide,2006,836,96,302652045.09
+upstream,bilateral,282520,Lithium oxide and hydroxide,2007,823,104,484109866.03
+upstream,bilateral,282520,Lithium oxide and hydroxide,2008,816,102,461445481.28
+upstream,bilateral,282520,Lithium oxide and hydroxide,2009,858,102,364913160.63
+upstream,bilateral,282520,Lithium oxide and hydroxide,2010,837,99,426438009.75
+upstream,bilateral,282520,Lithium oxide and hydroxide,2011,884,108,485608870.6
+upstream,bilateral,282520,Lithium oxide and hydroxide,2012,907,92,568993442.77
+upstream,bilateral,282520,Lithium oxide and hydroxide,2013,917,102,575438584.84
+upstream,bilateral,282520,Lithium oxide and hydroxide,2014,902,99,730505230.7
+upstream,bilateral,282520,Lithium oxide and hydroxide,2015,1159,102,1090003988.65
+upstream,bilateral,282520,Lithium oxide and hydroxide,2016,1248,102,1976475839.34
+upstream,bilateral,282520,Lithium oxide and hydroxide,2017,1410,102,3121373551.39
+upstream,bilateral,282520,Lithium oxide and hydroxide,2018,1290,99,3336750799.51
+upstream,bilateral,282520,Lithium oxide and hydroxide,2019,1462,100,4446456172.25
+upstream,bilateral,282520,Lithium oxide and hydroxide,2020,1437,93,3572115456.57
+upstream,bilateral,282520,Lithium oxide and hydroxide,2021,1475,95,4930781786.92
+upstream,bilateral,282520,Lithium oxide and hydroxide,2022,1564,95,21689875977.85
+upstream,bilateral,282520,Lithium oxide and hydroxide,2023,1709,97,33394557769.47
+upstream,bilateral,282520,Lithium oxide and hydroxide,2024,1665,85,10983836528.92
+upstream,bilateral,282520,Lithium oxide and hydroxide,2025,1512,68,4682322759.87
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1990,564,30,182879735.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1991,655,36,232459774.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1992,858,49,436574906.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1993,1042,58,494718894.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1994,1286,83,605513377.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1995,1399,96,549306736.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1996,1515,104,756569243.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1997,1585,112,753712980.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1998,1627,117,740772488.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),1999,1703,131,680109315.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2000,2047,145,800584172.71
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2001,2105,146,785239232.13
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2002,2251,145,646998175.7
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2003,2296,147,659923419.65
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2004,2547,152,885770093.88
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2005,2495,150,984359216.39
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2006,2557,155,1225614633.28
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2007,2868,159,1919466349.86
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2008,3255,155,2444280380.73
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2009,3372,157,1783968780.55
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2010,3405,162,2181121945.96
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2011,3545,159,2513899027.45
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2012,3791,162,2364631437.62
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2013,3941,163,2505292272.84
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2014,4057,164,2604600224.6
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2015,4651,160,2414552621.0
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2016,4830,167,2484934254.46
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2017,5674,173,3040534968.29
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2018,5309,166,3350292363.91
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2019,5444,164,2917881730.19
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2020,5719,161,2926430624.38
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2021,5929,163,3953631529.63
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2022,6103,160,4714624201.78
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2023,6466,158,4772754631.44
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2024,6424,135,4748854958.62
+upstream,bilateral,282739,Chlorides n.e.c. (lithium chloride),2025,5960,96,4658869704.14
+upstream,bilateral,283691,Lithium carbonate,1990,202,26,146382097.0
+upstream,bilateral,283691,Lithium carbonate,1991,228,29,235873116.0
+upstream,bilateral,283691,Lithium carbonate,1992,343,42,269346771.0
+upstream,bilateral,283691,Lithium carbonate,1993,390,46,278404647.0
+upstream,bilateral,283691,Lithium carbonate,1994,509,60,311531431.0
+upstream,bilateral,283691,Lithium carbonate,1995,566,69,362225655.0
+upstream,bilateral,283691,Lithium carbonate,1996,572,72,383817694.0
+upstream,bilateral,283691,Lithium carbonate,1997,659,84,319557343.0
+upstream,bilateral,283691,Lithium carbonate,1998,651,81,312363917.0
+upstream,bilateral,283691,Lithium carbonate,1999,674,86,309487618.0
+upstream,bilateral,283691,Lithium carbonate,2000,761,90,340605900.69
+upstream,bilateral,283691,Lithium carbonate,2001,766,91,326951300.6
+upstream,bilateral,283691,Lithium carbonate,2002,856,96,354962695.19
+upstream,bilateral,283691,Lithium carbonate,2003,859,96,428074076.84
+upstream,bilateral,283691,Lithium carbonate,2004,899,96,544525080.84
+upstream,bilateral,283691,Lithium carbonate,2005,900,96,669281260.19
+upstream,bilateral,283691,Lithium carbonate,2006,931,100,936980259.7
+upstream,bilateral,283691,Lithium carbonate,2007,960,97,1332214409.84
+upstream,bilateral,283691,Lithium carbonate,2008,1036,104,1731298783.15
+upstream,bilateral,283691,Lithium carbonate,2009,1086,103,1137144759.42
+upstream,bilateral,283691,Lithium carbonate,2010,1036,101,1438263779.99
+upstream,bilateral,283691,Lithium carbonate,2011,1104,110,1622812010.82
+upstream,bilateral,283691,Lithium carbonate,2012,1181,109,1755018272.25
+upstream,bilateral,283691,Lithium carbonate,2013,1196,100,1511874636.21
+upstream,bilateral,283691,Lithium carbonate,2014,1292,108,1699503059.91
+upstream,bilateral,283691,Lithium carbonate,2015,1474,94,1860227811.39
+upstream,bilateral,283691,Lithium carbonate,2016,1585,100,3866313250.75
+upstream,bilateral,283691,Lithium carbonate,2017,1720,107,5726691277.89
+upstream,bilateral,283691,Lithium carbonate,2018,1596,107,6414362252.1
+upstream,bilateral,283691,Lithium carbonate,2019,1610,102,5505263542.99
+upstream,bilateral,283691,Lithium carbonate,2020,1653,101,4102211734.49
+upstream,bilateral,283691,Lithium carbonate,2021,1792,103,5690812519.69
+upstream,bilateral,283691,Lithium carbonate,2022,1900,104,41991295243.0
+upstream,bilateral,283691,Lithium carbonate,2023,2027,102,34639298023.77
+upstream,bilateral,283691,Lithium carbonate,2024,1991,99,14585880738.14
+upstream,bilateral,283691,Lithium carbonate,2025,1768,72,9319905880.91
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1990,53,27,447881686.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1991,73,37,550211788.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1992,101,53,690637959.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1993,111,61,638881519.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1994,158,87,817519432.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1995,184,104,1086673639.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1996,203,115,1110619694.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1997,217,124,1201458210.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1998,229,129,1163233237.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),1999,241,135,1190781300.0
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2000,267,149,1141317755.9
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2001,267,149,1135589486.01
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2002,268,150,1164127447.52
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2003,281,150,1290955940.94
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2004,284,150,1596745827.17
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2005,287,158,1665360855.8
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2006,296,158,1729961045.35
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2007,295,160,1877063990.37
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2008,292,159,2356224165.66
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2009,303,161,1771924165.52
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2010,313,164,2083735567.6
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2011,309,163,2625398692.93
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2012,311,161,2671192974.73
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2013,322,166,2578341759.17
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2014,324,164,2513715150.59
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2015,324,167,2375103509.83
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2016,322,170,2401379962.91
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2017,332,174,4107597205.14
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2018,334,176,4908678169.94
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2019,319,169,4290229947.7
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2020,310,165,3427580319.92
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2021,315,163,5393785728.57
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2022,312,161,20836075291.71
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2023,315,161,32281928908.35
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2024,275,137,11296980231.81
+upstream,world,253090,Mineral substances n.e.c. (incl. spodumene/petalite/lepidolite concentrate),2025,201,97,5399087492.54
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1990,38,27,35204080.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1991,46,30,45544026.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1992,60,40,49052664.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1993,78,51,45034706.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1994,103,71,52085378.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1995,112,75,70616434.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1996,116,82,83864556.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1997,116,87,92390111.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1998,136,97,80238519.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),1999,135,97,86776870.0
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2000,150,109,104416475.75
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2001,153,112,92834380.99
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2002,151,109,113858781.98
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2003,152,112,137721908.19
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2004,173,127,148011547.85
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2005,187,132,172587300.09
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2006,183,129,170802895.59
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2007,178,131,199913896.14
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2008,199,130,253564845.56
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2009,193,133,177890672.48
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2010,191,139,243530763.77
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2011,202,137,340454370.09
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2012,194,132,665095245.38
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2013,189,137,244934658.59
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2014,196,137,264844405.8
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2015,199,133,298697977.89
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2016,184,129,304513267.3
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2017,189,137,341646161.96
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2018,184,127,453264133.15
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2019,188,131,503484002.35
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2020,165,114,466159304.04
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2021,169,117,457683552.9
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2022,174,113,814465052.87
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2023,179,119,1046102091.08
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2024,153,106,842883237.98
+upstream,world,280519,Alkali metals other than sodium (lithium metal),2025,123,78,553680436.13
+upstream,world,282520,Lithium oxide and hydroxide,1990,32,25,19609680.0
+upstream,world,282520,Lithium oxide and hydroxide,1991,37,29,32128946.0
+upstream,world,282520,Lithium oxide and hydroxide,1992,57,39,44492293.0
+upstream,world,282520,Lithium oxide and hydroxide,1993,65,45,47872533.0
+upstream,world,282520,Lithium oxide and hydroxide,1994,87,61,58737874.0
+upstream,world,282520,Lithium oxide and hydroxide,1995,96,70,73823360.0
+upstream,world,282520,Lithium oxide and hydroxide,1996,105,74,75334682.0
+upstream,world,282520,Lithium oxide and hydroxide,1997,112,79,85392669.0
+upstream,world,282520,Lithium oxide and hydroxide,1998,121,85,79554002.0
+upstream,world,282520,Lithium oxide and hydroxide,1999,124,86,77153589.0
+upstream,world,282520,Lithium oxide and hydroxide,2000,125,89,89388098.71
+upstream,world,282520,Lithium oxide and hydroxide,2001,128,92,80892011.54
+upstream,world,282520,Lithium oxide and hydroxide,2002,128,95,75664972.88
+upstream,world,282520,Lithium oxide and hydroxide,2003,138,101,79233375.27
+upstream,world,282520,Lithium oxide and hydroxide,2004,136,97,84644980.39
+upstream,world,282520,Lithium oxide and hydroxide,2005,137,94,101461970.85
+upstream,world,282520,Lithium oxide and hydroxide,2006,134,96,146727943.58
+upstream,world,282520,Lithium oxide and hydroxide,2007,142,104,235785253.71
+upstream,world,282520,Lithium oxide and hydroxide,2008,138,102,224894669.51
+upstream,world,282520,Lithium oxide and hydroxide,2009,141,102,177280126.65
+upstream,world,282520,Lithium oxide and hydroxide,2010,140,99,207304453.36
+upstream,world,282520,Lithium oxide and hydroxide,2011,152,108,238240465.31
+upstream,world,282520,Lithium oxide and hydroxide,2012,135,92,277876052.29
+upstream,world,282520,Lithium oxide and hydroxide,2013,140,102,278872852.03
+upstream,world,282520,Lithium oxide and hydroxide,2014,143,99,354543550.56
+upstream,world,282520,Lithium oxide and hydroxide,2015,147,102,443176318.89
+upstream,world,282520,Lithium oxide and hydroxide,2016,146,102,752650725.62
+upstream,world,282520,Lithium oxide and hydroxide,2017,140,102,1179766870.84
+upstream,world,282520,Lithium oxide and hydroxide,2018,146,99,1537073821.38
+upstream,world,282520,Lithium oxide and hydroxide,2019,150,100,2112872667.26
+upstream,world,282520,Lithium oxide and hydroxide,2020,139,93,1733850805.35
+upstream,world,282520,Lithium oxide and hydroxide,2021,139,95,2388086139.72
+upstream,world,282520,Lithium oxide and hydroxide,2022,141,95,10585049384.61
+upstream,world,282520,Lithium oxide and hydroxide,2023,149,97,16352810049.28
+upstream,world,282520,Lithium oxide and hydroxide,2024,131,85,5361076653.8
+upstream,world,282520,Lithium oxide and hydroxide,2025,106,68,2236184079.76
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1990,52,30,91439867.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1991,62,36,116229887.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1992,82,49,218287455.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1993,98,58,247359447.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1994,136,83,302756686.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1995,156,96,274653368.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1996,170,104,378284621.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1997,175,112,376856490.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1998,183,117,370386244.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),1999,207,131,340054659.0
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2000,224,145,394426914.84
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2001,227,146,382669010.63
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2002,230,145,316339180.69
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2003,227,147,334869949.95
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2004,241,152,432760504.15
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2005,243,150,480160602.8
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2006,244,155,599167373.03
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2007,259,159,926806259.13
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2008,252,155,1050113921.71
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2009,252,157,773375421.62
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2010,268,162,941456180.64
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2011,256,159,1084885132.15
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2012,273,162,1029078209.13
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2013,270,163,1072582579.69
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2014,269,164,1085908296.46
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2015,276,160,922013227.35
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2016,272,167,933216285.08
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2017,288,173,1073384588.52
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2018,272,166,1330447608.31
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2019,272,164,1233259784.53
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2020,275,161,1117384768.93
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2021,272,163,1489143797.58
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2022,261,160,1769723430.38
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2023,262,158,1725117487.67
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2024,237,135,1725655313.89
+upstream,world,282739,Chlorides n.e.c. (lithium chloride),2025,179,96,1630106633.26
+upstream,world,283691,Lithium carbonate,1990,34,26,73191048.0
+upstream,world,283691,Lithium carbonate,1991,39,29,117936558.0
+upstream,world,283691,Lithium carbonate,1992,61,42,134673386.0
+upstream,world,283691,Lithium carbonate,1993,66,46,139202324.0
+upstream,world,283691,Lithium carbonate,1994,88,60,155765715.0
+upstream,world,283691,Lithium carbonate,1995,100,69,181112829.0
+upstream,world,283691,Lithium carbonate,1996,103,72,191908848.0
+upstream,world,283691,Lithium carbonate,1997,111,84,159778671.0
+upstream,world,283691,Lithium carbonate,1998,112,81,156181959.0
+upstream,world,283691,Lithium carbonate,1999,120,86,154743809.0
+upstream,world,283691,Lithium carbonate,2000,121,90,168656551.19
+upstream,world,283691,Lithium carbonate,2001,123,91,161601282.09
+upstream,world,283691,Lithium carbonate,2002,133,96,175575607.38
+upstream,world,283691,Lithium carbonate,2003,130,96,213834668.55
+upstream,world,283691,Lithium carbonate,2004,132,96,268810495.98
+upstream,world,283691,Lithium carbonate,2005,140,96,329910866.57
+upstream,world,283691,Lithium carbonate,2006,140,100,461757352.06
+upstream,world,283691,Lithium carbonate,2007,136,97,656367765.08
+upstream,world,283691,Lithium carbonate,2008,143,104,761086165.11
+upstream,world,283691,Lithium carbonate,2009,145,103,491199651.75
+upstream,world,283691,Lithium carbonate,2010,143,101,632353324.82
+upstream,world,283691,Lithium carbonate,2011,146,110,738091390.01
+upstream,world,283691,Lithium carbonate,2012,150,109,800674594.43
+upstream,world,283691,Lithium carbonate,2013,146,100,702476393.99
+upstream,world,283691,Lithium carbonate,2014,157,108,735726156.52
+upstream,world,283691,Lithium carbonate,2015,145,94,801834397.74
+upstream,world,283691,Lithium carbonate,2016,151,100,1607366403.26
+upstream,world,283691,Lithium carbonate,2017,157,107,2291820049.0
+upstream,world,283691,Lithium carbonate,2018,163,107,3006713405.19
+upstream,world,283691,Lithium carbonate,2019,150,102,2671817962.05
+upstream,world,283691,Lithium carbonate,2020,152,101,1957645453.34
+upstream,world,283691,Lithium carbonate,2021,153,103,2711115744.77
+upstream,world,283691,Lithium carbonate,2022,162,104,20503969654.36
+upstream,world,283691,Lithium carbonate,2023,158,102,16804776387.98
+upstream,world,283691,Lithium carbonate,2024,149,99,7051721246.57
+upstream,world,283691,Lithium carbonate,2025,119,72,3826764211.19

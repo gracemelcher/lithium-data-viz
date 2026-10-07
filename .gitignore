@@ -1,0 +1,23 @@
+# Raw Comtrade API responses. 3.2 GB, regenerable with
+# python_scripts/pull_comtrade_lithium.py, and nothing is reproducible from
+# them that the committed CSV does not already carry.
+.comtrade_cache/
+/cache/
+
+# Source data kept locally but not shipped. The page reads only the trimmed
+# CSV; these are the raw pulls and superseded revisions behind it, and several
+# are past GitHub's 100 MiB per-file limit.
+data/chemicals_ore_bilateral.csv
+data/chemicals_ore_bilateral_v2.csv
+data/chemicals_ore_bilateral_v3.csv
+data/chemicals_ore_bilateral_v4.csv
+data/not actively used/
+data/test.csv
+
+# OS and interpreter droppings
+.DS_Store
+__pycache__/
+*.pyc
+
+# Editor/session scratch
+.claude/
